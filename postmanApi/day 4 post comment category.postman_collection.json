@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "8d00b3b2-9f05-4be0-8d28-e6ea4cafb3a3",
+		"name": "day 4 post comment category",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29370456",
+		"_collection_link": "https://stage2-1261.postman.co/workspace/stage2_tryagain~4af927e6-50b7-4a10-90b2-3155ae76e2f1/collection/29370456-8d00b3b2-9f05-4be0-8d28-e6ea4cafb3a3?action=share&source=collection_link&creator=29370456"
+	},
+	"item": [
+		{
+			"name": "get category filtering",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/posts?categoryId=2&sortBy=id&order=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "categoryId",
+							"value": "2"
+						},
+						{
+							"key": "sortBy",
+							"value": "id"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get post comment limit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/posts/3/comments?sortBy=createdAt&limit=2&offset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"3",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "createdAt"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "offset",
+							"value": null
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get post by count comment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/posts/comments-summary?order=createdAt&limit=5&offset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"comments-summary"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "createdAt"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "offset",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
