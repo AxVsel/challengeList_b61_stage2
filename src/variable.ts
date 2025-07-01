@@ -1,0 +1,11 @@
+// let a: number = 34;
+// let b: number = 2;
+// const tambah: number = a + b;
+// const kurang: number = a - b;
+// const kali: number = a * b;
+// const bagi: number = a / b;
+
+// console.log(tambah);
+// console.log(kurang);
+// console.log(kali);
+// console.log(bagi);
