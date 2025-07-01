@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "95255bb7-66da-46f4-8003-38d5775d316f",
+		"name": "day 5 productStockSupplier",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29370456",
+		"_collection_link": "https://stage2-1261.postman.co/workspace/stage2_tryagain~4af927e6-50b7-4a10-90b2-3155ae76e2f1/collection/29370456-95255bb7-66da-46f4-8003-38d5775d316f?action=share&source=collection_link&creator=29370456"
+	},
+	"item": [
+		{
+			"name": "update Stock and suppliers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"stockId\": 2,\r\n  \"quantity\": 120,\r\n\r\n  \"productId\": 2,\r\n  \"productName\": \"Sabun Organik Premium\",\r\n  \"description\": \"Sabun herbal alami premium\",\r\n  \"price\": 120000,\r\n\r\n  \"supplierId\": 12,\r\n  \"supplierName\": \"PT Alam Sehat Baru\",\r\n  \"email\": \"alamsehat@example.com\",\r\n  \"phone\": \"0823222222\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2002/api/v1/suppliers-stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"api",
+						"v1",
+						"suppliers-stock"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
