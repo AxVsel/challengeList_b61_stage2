@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "19060063-7d87-4678-a718-58416b1d5fca",
+		"name": "day 6 rbacChallange",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29370456",
+		"_collection_link": "https://stage2-1261.postman.co/workspace/stage2_tryagain~4af927e6-50b7-4a10-90b2-3155ae76e2f1/collection/29370456-19060063-7d87-4678-a718-58416b1d5fca?action=share&source=collection_link&creator=29370456"
+	},
+	"item": [
+		{
+			"name": "regitster",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"rusdi@gmail.com\",\r\n    \"password\": \"rootroot\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2002/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"rusdi@gmail.com\",\r\n    \"password\": \"rootroot\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2002/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InN1cHBsaWVyIiwiaWF0IjoxNzUxNDQ0NjU3LCJleHAiOjE3NTE1MzEwNTd9.eOP4PTFj4pH3uI05jL_JjoNJLitX8aVlfkk2nEbA_sk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"budi@gmail.com\",\r\n    \"password\": \"rootroot\"\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:2002/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset submit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRheWF0QGdtYWlsLmNvbSIsImlhdCI6MTc1MTQzNTkyMywiZXhwIjoxNzUxNDM2ODIzfQ.aKWHucZ1NrC3_gb2On4guSDjNGGMygNNCYTlSlb4EEg\",\r\n    \"newPassword\": \"useruser\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2002/auth/reset/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"auth",
+						"reset",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"dayat@gmail.com\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2002/auth/reset/request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"auth",
+						"reset",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUyMjkyMzUwLCJleHAiOjE3NTIzNzg3NTB9.TAb2WgW1Tj_G0PASfU6LJ2P5S1lVApF16NS3TbA563U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Produk tambah\",\r\n  \"description\": \"Deskripsi produk\",\r\n  \"price\": 320000,\r\n  \"stock\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2002/auth/products/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"auth",
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
